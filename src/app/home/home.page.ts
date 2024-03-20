@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MyCustomPagePage } from '../my-custom-page/my-custom-page.page';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -10,52 +9,48 @@ import { DataService } from '../data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  private dataService = this.DataService;
-  objectNum = 0;
-  objectArr: string[] = [];
-  isLoading: boolean = false;
-  loadingText: string = 'Loading';
-  data: string = '';
-  isAuthenticated = this.AuthenticationService.authenticate;
+  linkAuthenticate = false;
 
   constructor(
     private AuthenticationService: AuthenticationService,
-    private DataService: DataService
+    private router: Router
   ) {}
 
   goWithAuthentication() {
     this.AuthenticationService.authenticate = true;
-    alert('Access granted');
-  }
-
-  goWithUnAuthentication() {
-    this.AuthenticationService.authenticate = false;
-    alert('Access removed');
-  }
-
-  showObject() {
+    this.linkAuthenticate = true;
     if (this.AuthenticationService.authenticate) {
-      console.log(this.objectArr);
+      alert('Authentication Complete');
+    }
+    //this.router.navigate(['another']);
+  }
+
+  goToCustomPage() {
+    if (this.AuthenticationService.authenticate) {
+      this.AuthenticationService.currentPage = 2;
+      this.router.navigate(['my-custom-page']);
+      this.AuthenticationService.authenticate = false;
     } else {
-      alert('Please authenticate first.');
+      alert('Please Authenticate first');
     }
   }
-  async addToObject() {
-    this.isLoading = true;
-    await this.dataService
-      .fetchData(this.AuthenticationService.authenticate)
-      .then((data) => {
-        console.log(data);
-        this.objectArr = [...this.objectArr, this.objectNum.toString()];
-        this.objectNum += 1;
-      })
-      .catch((error) => {
-        alert('Please authenticate first.');
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
 
-        console.error('Authentication failed', error);
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
   }
 }

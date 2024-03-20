@@ -24,18 +24,12 @@
     </p>
   </div>
   <div class="navigation-buttons">
-    <!-- <ion-button [href]="linkAuthenticate ? 'my-custom-page' : '/blank'" -->
-      <!-- >Go to custom page by link</ion-button -->
-    <!-- >
+    <ion-button [href]="linkAuthenticate ? 'my-custom-page' : '/blank'"
+      >Go to custom page by link</ion-button
+    >
     <ion-button (click)="goToCustomPage()">
       Go to custom page by Event
-    </ion-button> -->
-
-    <ion-button (click)="goWithAuthentication()">Authenticate</ion-button> 
-    <ion-button (click)="goWithUnAuthentication()">Unauthenticate</ion-button> 
-    <ion-button (click)="showObject()"> Show Object</ion-button>
-    <ion-button (click)="addToObject()"> Add 1 to Object</ion-button>
-    <div *ngIf = "isLoading"> {{loadingText}} </div>
-    <div *ngIf = "isLoading"> {{objectArr}} </div>
+    </ion-button>
+    <ion-button (click)="goWithAuthentication()">Authenticate</ion-button>
   </div>
 </ion-content>
