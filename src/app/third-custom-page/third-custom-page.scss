@@ -1,0 +1,25 @@
+.deadline {
+  display: flex;
+  flex-direction: column;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-container h1 {
+  font-size: 10rem;
+  letter-spacing: 1rem;
+}
+.deadline-names {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh;
+}
+.deadline h1 {
+  gap: 1rem;
+  border-bottom: 1px solid black;
+}
