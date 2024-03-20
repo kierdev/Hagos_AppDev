@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  currentPage = 1;
   authenticate = false;
 
   constructor() {}
