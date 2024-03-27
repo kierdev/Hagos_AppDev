@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AuthenticationService } from '../authentication.service';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -13,15 +12,27 @@ export class LoginPage {
   constructor(
     private router: Router,
     private alertController: AlertController,
-    private authenticationService: AuthenticationService,
     private toastController: ToastController
   ) {}
 
   username: string = '';
   password: string = '';
 
+  accounts: any[] = [
+    { accountUsername: 'admin', accountPassword: 'admin' },
+    { accountUsername: 'user1', accountPassword: 'user1' },
+  ];
+
+  checkCredentials(username: string, password: string) {
+    return this.accounts.some(
+      (account) =>
+        account.accountUsername === username &&
+        account.accountPassword === password
+    );
+  }
+
   authenticate() {
-    this.authenticationService.checkCredentials(this.username, this.password)
+    this.checkCredentials(this.username, this.password)
       ? this.alertLogin()
       : this.presentToast();
   }
