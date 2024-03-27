@@ -1,11 +1,39 @@
 <ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Welcome {{username}}!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <div id="container">
+    <ion-searchbar placeholder="Custom Placeholder"></ion-searchbar>
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Date</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-datetime
+            value="2022-04-21T00:00:00"
+            min="2022-03-01T00:00:00"
+            max="2022-05-31T23:59:59"
+          ></ion-datetime>
+          <ion-button id="open-loading">Show Loading</ion-button>
+          <ion-loading
+            trigger="open-loading"
+            message="Dismissing after 1.5 seconds..."
+            duration="1500"
+          ></ion-loading>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
     <ion-card id="card">
       <ion-card-header>
         <ion-card-title>Pokemon API</ion-card-title>
       </ion-card-header>
 
-      <ion-card-content> Here's a small list of Pokemons. </ion-card-content>
+      <ion-card-content> Here's a small list of Pokemons.</ion-card-content>
     </ion-card>
 
     <ion-list [inset]="true">

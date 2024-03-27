@@ -10,11 +10,13 @@ import { DataService } from 'src/app/data.service';
 export class HomePage implements OnInit {
   id: any;
   data: any;
+  username: any;
 
   constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit(): void {
     this.loadData();
+    this.username = localStorage.getItem('username'); //getting session variable
   }
 
   logout() {
