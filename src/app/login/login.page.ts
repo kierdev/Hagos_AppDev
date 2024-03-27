@@ -56,7 +56,6 @@ export class LoginPage {
           text: 'OK',
           handler: () => {
             localStorage.setItem('username', this.username); //setting session variable
-            console.log(localStorage.getItem('username'));
 
             this.navigate();
           },

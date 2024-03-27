@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
   authenticate: boolean = false;
 
+  // ACCOUNT CREDENTIALS
   accounts: any[] = [
     { accountUsername: 'admin', accountPassword: 'admin' },
     { accountUsername: 'user1', accountPassword: 'user1' },
