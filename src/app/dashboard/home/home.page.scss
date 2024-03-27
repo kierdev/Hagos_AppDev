@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+}
+.item {
+  display: flex;
+}
+.card-title {
+  text-transform: uppercase;
+}
+ion-label {
+  text-transform: uppercase;
+}
+#logout {
+  display: flex;
+}

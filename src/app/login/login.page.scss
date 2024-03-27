@@ -1,0 +1,19 @@
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  gap: 1rem;
+  transform: translateY(40%);
+}
+
+.inputs-container ion-input {
+  width: 100%;
+}
+
+#login {
+  margin-top: 1rem;
+}
+#forgotPassword {
+  align-self: flex-end;
+}

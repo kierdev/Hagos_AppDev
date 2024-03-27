@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card id="card">
+      <ion-card-header>
+        <ion-card-title>Pokemon API</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content> Here's a small list of Pokemons. </ion-card-content>
+    </ion-card>
+
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let item of data">
+        <ion-label>{{item.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button id="logout" class="ion-margin" (click)="logout()">
+      Log out
+    </ion-button>
+  </div>
+</ion-content>
