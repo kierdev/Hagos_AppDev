@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <div class="inputs-container">
+    <h1>Welcome!</h1>
+    <ion-input
+      label="Username"
+      label-placement="floating"
+      fill="solid"
+      placeholder="Enter your username"
+      type="text"
+      [(ngModel)]="username"
+    ></ion-input>
+    <ion-input
+      label="Password"
+      label-placement="floating"
+      fill="solid"
+      placeholder="Enter your password"
+      type="password"
+      [(ngModel)]="password"
+    ></ion-input>
+    <a id="forgotPassword" href="">Forgot Password?</a>
+    <ion-button id="login" (click)="authenticate()"> Log in </ion-button>
+  </div>
+</ion-content>

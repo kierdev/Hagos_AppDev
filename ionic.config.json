@@ -1,0 +1,7 @@
+{
+  "name": "hagos-act7",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
