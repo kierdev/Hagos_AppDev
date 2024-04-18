@@ -1,0 +1,7 @@
+{
+  "name": "ACTIVITY-8-HAGOS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
