@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="inputs-container">
+    <ion-input
+      [(ngModel)]="email"
+      label="EMAIL"
+      type="email"
+      required=""
+      label-placement="floating"
+    ></ion-input>
+    <ion-input
+      [(ngModel)]="password"
+      label="PASSWORD"
+      type="password"
+      label-placement="floating"
+    ></ion-input>
+    <ion-input
+      [(ngModel)]="confirmPassword"
+      label="CONFIRM PASSWORD"
+      type="password"
+      label-placement="floating"
+    ></ion-input>
+
+    <div>
+      <ion-button
+        (click)="signup()"
+        expand="block"
+        fill="solid"
+        color="dark"
+        shape="round"
+      >
+        SIGN UP
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

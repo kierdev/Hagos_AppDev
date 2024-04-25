@@ -1,2 +1,14 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body .md,
+body .ios {
+  --ion-background-color: #050716;
+  --ion-text-color: white;
+  --ion-text-primary: #bb84e8;
+  --ion-toolbar-background: #050716;
+  --color: white;
+}

@@ -1,20 +1,229 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Menu Content</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding menu">
+    <div>
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>SETTINGS</ion-label>
+    </div>
+    <div (click)="logOut()">
+      <ion-icon name="log-in-outline"></ion-icon>
+      <ion-label>LOGOUT</ion-label>
+    </div>
+  </ion-content>
+</ion-menu>
+<div class="ion-page light-mode" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <!-- Main-->
+    <main>
+      <!--Home-->
+      <section class="home" id="home">
+        <div class="home-content">
+          <div class="header-wrapper">
+            <div class="header-name">Hi! My name is Kier</div>
+            <div class="animated-text-wrapper">
+              <div class="static-text">I'm a</div>
+              <div class="animated-text"></div>
+            </div>
+          </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+          <div class="button-wrapper">
+            <a class="contact-btn">Contact Me </a>
+            <div class="links-wrapper">
+              <a href="https://github.com/kierdev"
+                ><ion-icon name="logo-github"></ion-icon>
+              </a>
+              <a href="https://web.facebook.com/joekier.hagos">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a href="https://twitter.com/KierHagos26331">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="section-header"><h1>ABOUT</h1></div>
+        <div class="additional-info">
+          <div class="about-profile">
+            <div>
+              <ion-img
+                src="assets/images/about-image1.jpeg"
+                alt="The Wisconsin State Capitol building in Madison, WI at night"
+              ></ion-img>
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>INTRODUCTION</h2>
+            <div>
+              Hi! Once again my name is Kier. I am an Information Technology
+              Student from Pamantasan ng Lungsod ng Valenzuela. I am an aspiring
+              <span>Full-Stack Web Developer</span> who is enthusiastic about
+              using technology. I am really passionate about programming. I love
+              to bring ideas in real-world through Programming.
+            </div>
+          </div>
+
+          <div class="additional-info">
+            <h2>MYSELF AFTER 5 YEARS</h2>
+            <div>
+              I don't know what exactly, there's a lot of unknowns, but I really
+              wanted to be a full-stack developer.But right now that I'm a
+              college student, I wanted to explore all the career options in
+              Programming.
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>HOBBIES/SKILLS</h2>
+            <div>
+              As an IT student, I am highly interested in Web Development and I
+              am trying to learn multiple Frameworks such as React.js, Tailwind
+              CSS, Node.js and Express.js. I might also explore PHP and Laravel
+              soon.
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>MOTTO</h2>
+            <div>
+              “Treat your men as you would your own beloved sons. And they will
+              follow you into the deepest valley.” - Sun Tzu
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>LOVE LANGUAGE</h2>
+            <div>
+              For me, love is a very subjective thing. There's infinite meaning
+              for it and it will vary depending on the person. Personally, I
+              would say that my Love Language will be Quality Time. When I love
+              someone, or something. Either a person, a thing, a work, or
+              anything. I always give it not just Quality, but also a Quantity
+              of time.
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>KUNG PAGKAIN AKO</h2>
+            <div>
+              If I were a food, chicken breast siguro. Wala lang, para high
+              protein.
+            </div>
+          </div>
+          <div class="additional-info">
+            <h2>PET PEEVE</h2>
+            <div>
+              Yung mga di nagpapatay ng signal light kahit kanina pa lumiko.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services">
+        <div class="section-header"><h1>SERVICES</h1></div>
+
+        <ion-grid class="services-container">
+          <ion-row>
+            <ion-col
+              ><app-service-card
+                title="Web Development"
+                icon="code-slash-outline"
+                content="I bring ideas into reality with the use of Programming. I am highly skilled in front-end web development and
+              proficient in Frameworks such as React, Tailwind, NodeJS and ExpressJS."
+              ></app-service-card
+            ></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><app-service-card
+                title="Mobile App Development"
+                icon="logo-android"
+                content="Whether you're looking to create a cutting-edge iOS, Android, or cross-platform app, I can help you create
+                Full-stack Mobile Applications with the use of Ionic, Angular, NodeJS and ExpressJS"
+              ></app-service-card
+            ></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-col
+                ><app-service-card
+                  title="UI/UX Design"
+                  icon="laptop-outline"
+                  content="I create ergonomically designed websites I create visually appealing and user-friendly interfaces
+              that not only look beautiful but also enhance usability and accessibility across various devices and platforms."
+                ></app-service-card
+              ></ion-col>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </section>
+      <section id="skills">
+        <div class="section-header"><h1>SKILLS</h1></div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <app-stack-card
+                icon="logo-html5"
+                stackName="HTML"
+              ></app-stack-card>
+            </ion-col>
+            <ion-col>
+              <app-stack-card icon="logo-CSS3" stackName="CSS"></app-stack-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <app-stack-card
+                icon="logo-javascript"
+                stackName="JS"
+              ></app-stack-card>
+            </ion-col>
+            <ion-col>
+              <app-stack-card
+                icon="logo-react"
+                stackName="REACT"
+              ></app-stack-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <app-stack-card
+                icon="logo-html5"
+                stackName="TAILWIND"
+              ></app-stack-card>
+            </ion-col>
+            <ion-col>
+              <app-stack-card
+                icon="logo-angular"
+                stackName="ANGULAR"
+              ></app-stack-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <app-stack-card
+                icon="logo-nodejs"
+                stackName="NODE"
+              ></app-stack-card>
+            </ion-col>
+            <ion-col>
+              <app-stack-card
+                icon="logo-ionic"
+                stackName="IONIC"
+              ></app-stack-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </section>
+    </main>
+  </ion-content>
+</div>
