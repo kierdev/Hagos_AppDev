@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <div>
+      <ion-toolbar>
+        <ion-title>Create</ion-title>
+      </ion-toolbar>
+    </div>
+
+    <div>
+      <ion-icon
+        (click)="back()"
+        name="arrow-back-outline"
+        color="tertiary"
+      ></ion-icon>
+    </div>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="carBrand" label="Brand"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="carModel" label="Model"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="carPrice" label="Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-toggle [(ngModel)]="carAvailability" [checked]="true"
+        >Availability</ion-toggle
+      >
+    </ion-item>
+    <ion-item>
+      <ion-list id="color-list">
+        <div class="row">
+          <div>Available Colors (Optional)</div>
+          <ion-icon
+            (click)="incrementInput()"
+            name="add-circle-outline"
+            color="tertiary"
+          ></ion-icon>
+        </div>
+
+        <ion-input
+          *ngFor="let count of colorCount"
+          label="Color"
+          [(ngModel)]="carAvailableColors[count-1]"
+          placeholder="Enter text"
+        ></ion-input>
+      </ion-list>
+    </ion-item>
+    <ion-item>
+      <div>Release Date</div>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime
+            (ionChange)="dateChanged($event)"
+            id="datetime"
+          ></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  </ion-list>
+  <div class="button-container">
+    <ion-button (click)="save()" color="success" shape="round">
+      Save <ion-icon name="cloud-upload-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
